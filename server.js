@@ -13,8 +13,9 @@ app.use(bodyParser.json())
 const dbConn = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'admin',
-  database : 'car_rental'
+  password : 'Reddy@1510',
+  database : 'car_rental',
+  // port     : 3306
 });
 dbConn.connect(function(err) {
   if (err) throw err;
