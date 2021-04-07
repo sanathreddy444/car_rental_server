@@ -172,9 +172,8 @@ app.get('/customerProfile/:username', (req, res) => {
     }
   })
 });
-
 app.post('/updateProfile', (req, res) => {
-  dbConn.query("UPDATE customer SET first_name = ?,last_name = ?,dob = ?,address = ?,phone_number = ?,driving_license = ?",[req.body.first_name,req.body.last_name,req.body.dob,req.body.address,req.body.phone_number,req.body.driving_license], function(err, result) {
+  dbConn.query("UPDATE customer SET first_name = ?,last_name = ?,dob = ?,address = ?,phone_number = ?,driving_license = ? WHERE email=?",[req.body.first_name,req.body.last_name,req.body.dob,req.body.address,req.body.phone_number,req.body.driving_license,req.body.email], function(err, result) {
     if(err) {
       res.send({status:500, message: "Please try again"});
     } else {
